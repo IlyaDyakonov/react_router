@@ -1,0 +1,19 @@
+.post {
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.add-comment input {
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    outline: none;
+}
+
+.add-comment input::placeholder {
+    color: #999;
+}
