@@ -14,7 +14,6 @@
 
     border: 1px solid #ccc;
     padding: 16px;
-    /* margin-bottom: 16px; */
     border-radius: 8px;
     background-color: #fff;
 }
@@ -24,6 +23,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    color: black;
 }
 
 .edit-post-textarea {
@@ -51,7 +51,7 @@
 
 .edit-post-placeholder span {
     padding: 5px 10px;
-    background-color: #e4e2e2;
+    background-color: #4e4e4e;
     border-radius: 50px;
 }
 

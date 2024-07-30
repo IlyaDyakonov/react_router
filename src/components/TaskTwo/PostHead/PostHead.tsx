@@ -30,7 +30,7 @@ const PostHead: React.FC<PostHeadProps> = ({ id, created }: PostHeadProps): Reac
             </div>
             {id && (
                 <div className="post-options">
-                    <Link to={`/posts/${id}`}>Просмотр</Link>
+                    <Link to={`/tasktwo/posts/${id}`}>Просмотр</Link>
                 </div>
             )}
         </div >

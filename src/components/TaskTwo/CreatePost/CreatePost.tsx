@@ -16,22 +16,30 @@ const CreatePost: React.FC = () => {
         }
     }, []);
 
+    /**
+   * Обработчик для отмены создания поста.
+   */
     const handleClose = () => {
         localStorage.setItem('AddContent', content);
-        navigate(`/posts`);
+        navigate(`/tasktwo/posts`);
     }
 
+    /**
+   * Обработчик отправки формы для создания поста.
+   * @param {React.FormEvent} event Событие формы
+   */
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
-            const response = await fetch(`${import.meta.env.VITE_NOTES_URL}/posts/new`, {
+            const response = await fetch(`${import.meta.env.VITE_NOTES_URL}/tasktwo/posts/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ id: 0, content })
             });
             if (response.ok) {
                 localStorage.removeItem('AddContent');
-                navigate('/posts'); 
+                console.log('Вы написали пост!');
+                navigate(`/tasktwo/posts`); 
             } else {
                 console.error('Не удалось создать пост');
             }
@@ -59,8 +67,8 @@ const CreatePost: React.FC = () => {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder='Напишите Ваш текст для поста...'
-                        required>
-                    </textarea>
+                        required
+                    />
                 </div>
                 <div className="post-form-controls">
                     <button type="submit" className="publish-button">Опубликовать</button>

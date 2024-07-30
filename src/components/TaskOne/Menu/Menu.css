@@ -63,7 +63,7 @@ body {
     position: relative;
     flex-grow: 1;
     text-align: center;
-    line-height: 3rem;
+    line-height: 2em;
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
@@ -84,4 +84,13 @@ body {
 .menu__item-active:hover {
     opacity: 1;
     border-bottom-color: hsl(120, 50%, 50%);
+}
+
+.navigation-menu {
+    background: #260F26;
+}
+
+.navigation-menu h2 {
+    color: #fff;
+    opacity: .9;
 }

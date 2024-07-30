@@ -12,7 +12,7 @@ const EditPost: React.FC = () => {
     const [content, setContent] = useState(''); // Состояние для содержимого поста
     const { id } = useParams(); // Получение ID поста из параметров маршрута
     const navigate = useNavigate(); // Хук для навигации
-    const apiUrl = `${process.env.REACT_APP_API_URL}/posts/`;
+    const apiUrl = `${import.meta.env.VITE_NOTES_URL}/tasktwo/posts/`;
 
     // Загрузка текущих данных поста для редактирования
     useEffect(() => {
@@ -43,7 +43,7 @@ const EditPost: React.FC = () => {
                 body: JSON.stringify({ id, content }) // Отправка изменений на сервер
             });
             if (response.ok) {
-                navigate(`${process.env.REACT_APP_HW_PROJECT_NAME}/posts/${id}`); // Перенаправление после успешного сохранения
+                navigate(`/tasktwo/posts/`); // Перенаправление после успешного сохранения
             } else {
                 console.error('Не удалось сохранить изменения поста');
             }
@@ -57,7 +57,7 @@ const EditPost: React.FC = () => {
      * Перенаправляет пользователя обратно к просмотру поста.
      */
     const handleClose = () => {
-        navigate(`${process.env.REACT_APP_HW_PROJECT_NAME}/posts/${id}`); // Перенаправление
+        navigate(`/tasktwo/posts/${id}`); // Перенаправление
     };
 
     // Рендеринг компонента
@@ -74,15 +74,15 @@ const EditPost: React.FC = () => {
                         className="edit-post-textarea"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder='Текст для поста...'
+                        placeholder='Измените текст для поста...'
                         required>
                     </textarea>
                     <div className="edit-post-placeholder">
-                        <span>Фото/видео</span>
-                        <span>Отметить друзей</span>
-                        <span>Чувства/действия</span>
-                        <span>Отметить посещение</span>
-                        <span>GIF</span>
+                        <span>📸Фото/видео</span>
+                        <span>🧟Отметить друзей</span>
+                        <span>😉Чувства/действия</span>
+                        <span>🗺️Отметить посещение</span>
+                        <span>🎞️GIF</span>
                     </div>
                     <div className="edit-actions">
                         <button type="submit" className="save-button">Сохранить</button>

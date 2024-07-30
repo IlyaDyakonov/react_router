@@ -28,8 +28,8 @@ function Menu() {
     // Рендеринг навигационного меню
     return (
         <nav className="crud-menu">
-            <NavLink to={`${API_HW_PROJECT_NAME}/posts`} className={isExactActive('/posts') ? isActive : isNoActive}>Посты</NavLink>
-            <NavLink to={`${API_HW_PROJECT_NAME}/posts/new`} className={(navData) => navData.isActive ? isActive : isNoActive}>Создать пост</NavLink>
+            <NavLink to={`${API_HW_PROJECT_NAME}/tasktwo/posts/`} className={isExactActive(`${API_HW_PROJECT_NAME}/tasktwo/posts/`) ? isActive : isNoActive}>Посты</NavLink>
+            <NavLink to={`${API_HW_PROJECT_NAME}/tasktwo/posts/new`} className={(navData) => navData.isActive ? isActive : isNoActive}>Создать пост</NavLink>
         </nav>
     )
 }

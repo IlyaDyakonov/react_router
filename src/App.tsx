@@ -1,25 +1,26 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
-import { Menu, DriftPage, ForzaPage, HomePage, TimeAttackPage } from './components/TaskOne/Menu';
+import { NavigationMenu } from './components/TaskOne/';
 import CRUD from './components/TaskTwo/CRUD/CRUD';
 
 
 function App() {
   return (
       <Router>
-        <h1>Задача 1!</h1>
-        <Menu />
-        <div className="page">
+        <h1>Домашнее задание «React Router»</h1>
+        <header className='header'>
+          <nav className="nav-components">
+            <NavLink to={"/taskone/"} className="nav-link">Задача 1!</NavLink>
+            <NavLink to={"/tasktwo/"} className="nav-link">Задача 2!</NavLink>
+          </nav>
+        </header>
+
           <Routes>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/drift" element={<DriftPage />} />
-            <Route path="/timeattack" element={<TimeAttackPage />} />
-            <Route path="/forza" element={<ForzaPage />} />
-          </Routes>
-        </div>
-        <h1>Задача 2!</h1>
-          <Routes>
-            <Route path="/*" element={<CRUD />} />
+            {/* задача 1! */}
+            <Route path="/taskone/*" element={<NavigationMenu />} />
+
+            {/* задача 2! */}
+            <Route path="/tasktwo/*" element={<CRUD />} />
           </Routes>
       </Router>
   )

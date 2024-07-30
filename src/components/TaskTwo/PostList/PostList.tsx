@@ -13,7 +13,7 @@ const PostList: React.FC = () => {
     useEffect(() => {
         const fetchPost = async() => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_NOTES_URL}/posts`);
+                const response = await fetch(`${import.meta.env.VITE_NOTES_URL}/tasktwo/posts`);
                 const data = await response.json();
                 setPosts(data);
             } catch (error) {

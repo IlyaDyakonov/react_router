@@ -12,7 +12,7 @@ const ViewPost: React.FC = () => {
     const [post, setPost] = useState<PostBodyProps | null>(null); // Состояние для хранения данных поста
     const { id } = useParams(); // ID поста из параметров маршрута
     const navigate = useNavigate(); // Хук для навигации
-    const apiUrl = `${import.meta.env.VITE_NOTES_URL}/posts/`;
+    const apiUrl = `${import.meta.env.VITE_NOTES_URL}/tasktwo/posts/`;
 
     // Загрузка деталей поста при монтировании компонента
     useEffect(() => {
@@ -32,7 +32,7 @@ const ViewPost: React.FC = () => {
         try {
             const response = await fetch(`${apiUrl}${id}`, { method: 'DELETE' });
             if (response.ok) {
-                navigate(`${import.meta.env.REACT_APP_HW_PROJECT_NAME}/`);
+                navigate("/tasktwo/posts");
             } else {
                 console.error('Ошибка при удалении поста');
             }
@@ -51,7 +51,7 @@ const ViewPost: React.FC = () => {
             <div className="view-post">
                 <PostBody content={post.content} created={post.created} /> {/* Компонент тела поста */}
                 <div className="view-actions">
-                    <button onClick={() => navigate(`/posts/${id}/edit`)} className="edit-button">Изменить</button>
+                    <button onClick={() => navigate(`/tasktwo/posts/${id}/edit`)} className="edit-button">Изменить</button>
                     <button onClick={handleDelete} className="delete-button">Удалить</button>
                 </div>
             </div>
